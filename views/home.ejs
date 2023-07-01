@@ -1,11 +1,20 @@
 <%- include("partial/header.ejs") -%>
 
-<h1>Home</h1>
+    <h1>Home</h1>
 
-<h3><%= content %></h3>
+    <h3>
+        <%= content %>
+    </h3>
 
-<% for (let i=0; i<newPost.length; i++){ %>
-  <h1><%=newPost[i].title%></h1>
-  <p><%=newPost[i].body%></p>
-  <% } %> <%- include("partial/footer.ejs") -%> >
-</newPost.length;>
+    <% for (let i=0; i<newPost.length; i++){ %>
+        <h1>
+            <%=newPost[i].title%>
+        </h1>
+
+        <p>
+            <%=newPost[i].body.substring(0,100)+"..."%><a href="/post/<%=newPost[i].title%>">More</a>
+        </p>
+        <% } %>
+
+
+            <%- include("partial/footer.ejs") -%>
